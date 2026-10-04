@@ -1,0 +1,8 @@
+board:
+  name: ms60
+  full_name: Mystery 60
+  vendor: mystery
+  socs:
+    - name: nrf52840
+      variants:
+        - name: zmk

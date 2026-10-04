@@ -1,0 +1,22 @@
+# Copyright (c) 2026 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+if BOARD_MS60
+
+config ZMK_KEYBOARD_NAME
+	default "Mystery_60"
+
+config USB_NRFX
+	default y
+	depends on USB_DEVICE_STACK
+
+config BT_CTLR
+	default BT
+
+config ZMK_BLE
+	default y
+
+config ZMK_USB
+	default y
+
+endif # BOARD_MS60
