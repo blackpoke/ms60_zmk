@@ -1,12 +1,13 @@
 file_format: "1"
-id: ms60
-name: ms60
+id: ms60//zmk
+name: Mystery 60
 type: board
 arch: arm
 features:
   - keys
   - underglow
+  - studio
 outputs:
   - usb
   - ble
-url: none
+url: https://github.com/blackpoke/ms60_zmk
