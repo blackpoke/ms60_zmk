@@ -45,15 +45,15 @@
 
         default {
             // -------------------------------------------------------------------------------------------
-            // | ESC |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |  0  |  -  |  =  | BKSP |BKSP|
-            // | TAB  |  Q  |  W  |  E  |  R  |  T  |  Y  |  U  |  I  |  O  |  P  |  [  |  ]  |   "|"    |
+            // | ESC |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |  0  |  -  |  =  |  \ | MO(2)|
+            // | TAB  |  Q  |  W  |  E  |  R  |  T  |  Y  |  U  |  I  |  O  |  P  |  [  |  ]  |   BKSP   |
             // | CAPS  |  A  |  S  |  D  |  F  |  G  |  H  |  J  |  K  |  L  |  ;  |  '  |     ENTER     |
             // |  SHIFT  |  Z  |  X  |  C  |  V  |  B  |  N  |  M  |  ,  |  .  |   SHFT   |  UP  |   /   |
             // |  CTL  |  WIN  |  ALT  |           SPACE             | FN(1) | WIN | LEFT | DOWN | RIGHT |
             // -------------------------------------------------------------------------------------------
 
             bindings = <
-&kp ESC    &kp N1        &kp N2        &kp N3  &kp N4  &kp N5     &kp N6         &kp N7  &kp N8     &kp N9        &kp N0     &kp MINUS                 &kp EQUAL    &kp NON_US_BACKSLASH  &kp DELETE
+&kp ESC    &kp N1        &kp N2        &kp N3  &kp N4  &kp N5     &kp N6         &kp N7  &kp N8     &kp N9        &kp N0     &kp MINUS                 &kp EQUAL    &kp BSLH  &mo 2
 &kp TAB    &kp Q         &kp W         &kp E   &kp R   &kp T      &kp Y          &kp U   &kp I      &kp O         &kp P      &kp LBKT                  &kp RBKT     &kp BACKSPACE
 &kp F13    &kp A         &kp S         &kp D   &kp F   &kp G      &kp H          &kp J   &kp K      &kp L         &kp SEMI   &kp SQT                                &kp RET
 &kp LSHFT  &kp Z         &kp X         &kp C   &kp V   &kp B      &kp N          &kp M   &kp COMMA  &kp DOT       &kp SLASH  &mt RIGHT_SHIFT UP_ARROW  &lt 1 RIGHT
@@ -73,19 +73,19 @@
 
         control {
             // ------------------------------------------------------------------------------------------------
-            // | BT CLR | F1  | F2  | F3  | F4  | F5  | F6  | F7  | F8  | F9  | F10 | F11 | F12 | BOOT | BOOT |
-            // |  BT 1   | TOG  |  UP |   | HUEUP | SATUP | BRIUP | SPDUP |   |     |   |    |    |  RGB_efect|
-            // |   BT 2   | LT |  DN  | RT | HUEDN | SATDN | BRIDN | SPDDN |   |     |   |     |  EFFECT FORW |
-            // |    BT 3     |     |      |      |     |     |     |     |     |     |     |                  |
-            // |   BT 4  |      |      |             TOG RGB                | PRT SCR |    |    |     | STUDIO |
+            // |      | BT 1 | BT 2 | BT 3 |CLR ALL|     |     |     |     |     |     | BT CLR | SLEEP | BOOT |      |
+            // |      |  BLE |  USB |      |       |     |     |     |     |     | RGB | VOL DN | VOL UP|  TOG |
+            // |      |      |      |      |       |     |     |     |HUE DN|HUE UP|SAT DN| SAT UP |     EFFECT     |
+            // |      |      |      |      |       |     |     |     |     |SPD DN|SPD UP|EFF REV |    EFF FWD     |
+            // |      |      |      |                             |     |     |      |        |      | STUDIO|
             // ------------------------------------------------------------------------------------------------
 
             bindings = <
-&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &trans  &trans  &trans  &trans  &trans           &trans           &trans                            &bt BT_CLR       &kp K_SLEEP      &bootloader      &trans
-&trans  &out OUT_BLE  &out OUT_USB  &trans        &trans  &trans  &trans  &trans  &trans           &trans           &rgb_ug RGB_COLOR_HSB(226,67,50)  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG
-&trans  &trans        &trans        &trans        &trans  &trans  &trans  &trans  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SAD                   &rgb_ug RGB_SAI                   &rgb_ug RGB_EFF
-&trans  &trans        &trans        &trans        &trans  &trans  &trans  &trans  &trans           &rgb_ug RGB_SPD  &rgb_ug RGB_SPI                   &rgb_ug RGB_EFR  &rgb_ug RGB_EFF
-&trans  &trans        &trans                              &trans  &trans  &trans  &trans           &trans           &studio_unlock
+&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_CLR_ALL  &trans  &trans  &trans  &trans           &trans           &trans                            &bt BT_CLR       &kp K_SLEEP      &bootloader      &trans
+&trans  &out OUT_BLE  &out OUT_USB  &trans        &trans          &trans  &trans  &trans  &trans           &trans           &rgb_ug RGB_COLOR_HSB(234,84,96)  &kp C_VOL_DN     &kp C_VOL_UP     &rgb_ug RGB_TOG
+&trans  &trans        &trans        &trans        &trans          &trans  &trans  &trans  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SAD                   &rgb_ug RGB_SAI                   &rgb_ug RGB_EFF
+&trans  &trans        &trans        &trans        &trans          &trans  &trans  &trans  &trans           &rgb_ug RGB_SPD  &rgb_ug RGB_SPI                   &rgb_ug RGB_EFR  &rgb_ug RGB_EFF
+&trans  &trans        &trans                                      &trans  &trans  &trans  &trans           &trans           &studio_unlock
             >;
         };
     };
