@@ -1,0 +1,7 @@
+/*
+ * Copyright (c) 2026 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include "ms60_nrf52840_zmk.dts"
